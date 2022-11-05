@@ -36,8 +36,6 @@ class QuizBrain {
     if (_quest_num < _question_bank.length - 1) {
       _quest_num++;
     }
-    print(_quest_num);
-    print(_question_bank.length);
   }
 
   String get_question_text() {
@@ -46,5 +44,17 @@ class QuizBrain {
 
   bool get_correct_answer() {
     return _question_bank[_quest_num].questionAnswer;
+  }
+
+  bool isFinished() {
+    if (_quest_num >= _question_bank.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  void reset() {
+    _quest_num = 0;
   }
 }
